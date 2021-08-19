@@ -1,14 +1,35 @@
-My Project Name
-Overview
-This project will use python to do x, y, z.
+from flask import Flask, jsonify
 
-Inspiration
-I chose to do this project because I like catching pokemon.
+app = Flask(__name__)
 
-Skills Used
-In order to accomplish this project, I had to use the following pythonic skills:
 
-for loops
-functions
-if/elif/else logic
-etc...
+@app.route('/')
+def home():
+    return "Welcome to my api!"
+
+
+@app.route('/Card')
+def json_Card():
+    Card = {"Gale": {"Appearance": a small bird-like creature with a fish-like tail. It has 
+                      two pairs of thin wings and a long tuft of hair sprouting from its little round head. 
+                      It also has a pair of small cogs on its upper body. Its wings and tail appear to end as sharp blades., 
+                      "Powers and Abilities": Wind Magic (Aerokinesis): Gale has the ability to create strong winds, 
+                      that are capable of leaving deep gouges. It is similar to The Windy. "Gallery":, 
+                      "Trivia": The kanji at the top of the card: 疾風 (Pronounced 'Hayate') means 'gale, 
+                      strong wind, swift wind or fresh breeze' in Japanese.},
+            #"Siege": {"Apperance": 13.99, "Powers and Abilities": "Gallery":, "Trivia":},
+            #"Aqua": {"Appearance": 12.99, "Powers and Abilities": "Gallery":, "Trivia":},
+            #"Reflect": {"Appearance": 12.99, "Powers and Abilities": "Gallery":, "Trivia":},
+            #"Action": {"Appearance": 12.99, "Powers and Abilities": "Gallery":, "Trivia":},
+            #"Record": {"Appearance": 12.99, "Powers and Abilities": "Gallery":, "Trivia":},
+            #"Flight": {"Appearance": 12.99, "Powers and Abilities": "Gallery":, "Trivia":},
+            #"Lucid": {"Appearance": 12.99, "Powers and Abilities": "Gallery":, "Trivia":}}
+         
+                         
+                         
+            }
+    return jsonify(Card)
+
+
+if __name__ == "__main__":
+    app.run()
