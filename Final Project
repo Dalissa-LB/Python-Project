@@ -60,7 +60,7 @@ card_info = [
     }
 ]
 
-class Quote(Resource):
+class Card(Resource):
 
     def get(self, id=0):
         if id == 0:
