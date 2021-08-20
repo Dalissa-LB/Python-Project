@@ -8,15 +8,55 @@ card_info = [
     {
         "id": 0,
         "name": "Gale",
-        "information": "Appearance":{'Small bird-like creature with a fish-like tail.,
-                                     'It has two wings and a long tuft of hair sprouting from its little round head.,
-                                     'It also has a pair of small cogs on its upper body.,
-                                     'Its wings and tail appear to end as sharp blades.'}
-                        "Powers and Abilities": {'Wind Magic (Aerokinesis): Gale has the ability to create strong winds,
-                                                "that are capable of leaving deep gouges.'}
-                        "Trivia": {'The kanji at the top of the card: 疾風 (Pronounced 'Hayate') means 'gale,
-                                   strong wind, swift wind or fresh breeze' in Japanese.'}
+        "information": "Appearance":  {'Small bird-like creature with a fish-like tail.'
+                                     'It has two wings and a long tuft of hair sprouting from its little round head.'
+                                     'It also has a pair of small cogs on its upper body.'
+                                     'Its wings and tail appear to end as sharp blades.'}'
+                        "Powers and Abilities": {'Wind Magic (Aerokinesis): Gale has the ability to create strong winds'
+                                                'that are capable of leaving deep gouges.'}'
+                        "Trivia": {'The kanji at the top of the card: 疾風 (Pronounced 'Hayate') means 'gale'
+                                   'strong wind, swift wind or fresh breeze' in Japanese.'}'
 
+    }
+
+    {
+        "id": 1,
+        "name": "Siege",
+        "information": "Appearance": {'Siege appears as a large white rubber cube with a spiral vine-like design'
+                                      'decorating its sides. These vines swirl out and around the cube in its '
+                                      'card form.'}'
+                       "Powers and Abilities": {Imprison Inducement: Siege has the power to project its
+                                                form around beings, using its own body as a prison.
+                                                However, Tomoyo was able to break free by pricking Siege with a
+                                                pin, so the strength of this card's imprisoning power is questionable.
+                                                Superhuman Flexibility: Siege can become flexible, either being
+                                                soft or hard at Sakura's will.
+                                                Size-Shifting: It is also capable of changing its size, as it
+                                                was able to shrink itself around Aqua, and expand to
+                                                trap Action and Swing. However it could not overlap Labyrinth
+                                                as it trapped them in its own pocket dimension.
+                                                Selective Permeation: By command it can trap whatever it is
+                                                ordered to, allowing it to phase through certain objects and beings.
+                                                Transparency: Siege is shown that it can be transparent at Sakura's will}
+                       "Trivia": {The kanji at the top of the card: 包囲 (Pronounced 'Houi') means 'siege,
+                                  encirclement, envelopment, or surrounding' in Japanese.}
+    }
+    {
+        "id": 2,
+        "name":"Aqua",
+        "information": "Appearance": {'Aqua appears as a large bird which is entirely formed out of water.'
+                                      'A crown is also made of water and it hovers above its head.'}
+                        "Powers and Abilities": {'Water Magic (Hydrokinesis): The ability to create and
+                                                 manipulate water. Aqua can create waves and bind people
+                                                 with its watery body similar to the Watery card.'}
+                        "Trivia": {'The kanji at the top of the card: 水源 (Pronounced 'Suigen') means ' \
+                                   'water source' in Japanese. Aqua is the first Clear Card to have a Latin
+                                    name and the second card in the series. (The first being The Libra.)
+                                    Aqua's design parallels Blaze in several ways; similar in the way ' \
+                                    The Watery and The Firey parallel each other:
+                                    Both have the appearance of birds.
+                                    Both are the embodiment of their element.
+                                    Both possess an ornament atop of their heads.'}
     }
 ]
 
@@ -30,3 +70,7 @@ class Quote(Resource):
             if(information["id"] == id):
                 return information, 200
             return "Information not found", 400
+
+@app.route('/cards/<card_name>')
+def cards(card_name):
+    return cards[card_name]
